@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+python3-kivy = "*"
+pip = "*"
+wheel = "*"
+setuptools = "*"
+docutils = "*"
+pygments = "*"
+pypiwin32 = "*"
+kivy-deps-sdl2 = "*"
+kivy-deps-glew = "*"
+kivy-deps-gstreamer = "*"
+kivy-deps-angle = "*"
+kivy = "*"
+tkinter = "*"
+easygui = "*"
+
+[requires]
+python_version = "3.7"

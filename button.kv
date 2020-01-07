@@ -1,0 +1,293 @@
+ScreenManagement:
+    MenuScreen:
+    SubmenuScreen:
+    FreemodeGameScreen:
+    OntimeGameScreen:
+    OnpressGameScreen:
+    StatiscticScreen:
+    CollectionScreen:
+
+<Label>:
+    font_name: 'Roboto'
+    font_size: 55
+    markup: True
+    color:  [1, 1, 1, 1]
+
+<MenuButton@Button>:
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
+    background_normal: 'menu_button_UP.png'
+    background_down: 'menu_button_DOWN.png'
+    border: (30, 30, 30, 30)
+
+
+
+<MenuScreen>:
+    name: 'MenuScreen'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: title
+            text: '      Please\nchoose mode'
+            color:  0, 0, 0, 1
+            bold: True
+            multiline: True
+
+
+        BoxLayout:
+            height: 400
+            orientation: 'vertical'
+            padding: 80
+            spacing: 20
+            size_hint: (1, None)
+
+            MenuButton:
+                id: start_stop
+                text: 'Play'
+                on_press: app.submenu()
+                
+            MenuButton:
+                id: reset
+                text: 'Statisctic'
+                on_press: app.statistic()
+                background_normal: 'menu_button_UP.png'
+                background_down: 'menu_button_DOWN.png'
+
+            MenuButton:
+                id: reset
+                text: 'Collection'
+                on_press: app.collection()
+                background_normal: 'menu_button_UP.png'
+                background_down: 'menu_button_DOWN.png'
+
+
+
+
+<SubmenuScreen>:
+    name: 'SubmenuScreen'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: ontime
+            text: 'SubmenuScreen'
+            color:  0, 0, 0, 1
+            bold: True
+        BoxLayout:
+            height: 400
+            orientation: 'vertical'
+            padding: 80
+            spacing: 20
+            size_hint: (1, None)    
+            MenuButton:
+                text:'On time'
+                on_press: app.ontimeplay()
+                on_press: app.start_stop()
+            MenuButton:
+                text:'On press'
+                on_press: app.onpressplay()
+            MenuButton:
+                text:'Free mode'
+                on_press: app.fremodegame()
+            MenuButton:
+                text:'Back'
+                on_press: app.back()
+
+
+<OntimeGameScreen>:
+    name: 'OntimeGameScreen'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: ontime
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: counttime
+            text: ''
+            color:  0, 0, 0, 1
+        BoxLayout:
+            height: 400
+            orientation: 'vertical'
+            padding: 80
+            spacing: 20
+            size_hint: (1, None)
+
+            MenuButton:
+                text:'Press me'
+                on_press: app.presstimegame()
+            
+            MenuButton:
+                text:'Back'
+                on_press: app.back()
+            
+            
+            
+            
+
+<FreemodeGameScreen>:
+    name: 'FreemodeGameScreen'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: counttime
+            text: ''
+            color:  0, 0, 0, 1
+        BoxLayout:
+            height: 400
+            orientation: 'vertical'
+            padding: 80
+            spacing: 20
+            size_hint: (1, None)
+            MenuButton:
+                text:'Press me'
+                on_press: app.pressfreegame()
+            MenuButton:
+                text:'Back'
+                on_press: app.back()
+            
+
+
+
+<OnpressGameScreen>:
+    name: 'OnpressGameScreen'
+    #OnpressGameScreen: OnpressGameScreen
+    #id: OnpressGameScreen
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: counttime
+            text: ''
+            color:  0, 0, 0, 1
+        BoxLayout:
+            height: 400
+            orientation: 'vertical'
+            padding: 80
+            spacing: 20
+            size_hint: (1, None)
+            MenuButton:
+                id: pressbtn
+                text:'Press me'
+                on_press: app.pressgame()
+            MenuButton:
+                text:'Back'
+                on_press: app.back()
+            
+
+<StatiscticScreen>:
+    name: 'StatiscticScreen'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: StatiscticScreen
+            text: 'Statisctic'
+            color:  0, 0, 0, 1
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            
+            Label:
+                size_hint_y: None
+                id: ScrollView
+                height: 200
+                padding: 10, 10
+                font_size: 20
+                #height: self.texture_size[1]
+                #text_size: self.width
+                #padding: 10, 10
+                text: ''
+                color:  0, 0, 0, 1
+        
+
+                MenuButton:
+                    text:'Back'
+                    
+                    on_press: app.back()
+    
+        
+<CollectionScreen>:
+    name: 'CollectionScreen'
+    GridLayout:
+        orientation: 'vertical'
+        padding: 20
+        cols: 3
+        #rows: 4
+
+        Label:
+            id: Label_collect_1
+            border: (2, 2, 2, 2)
+            text: ''
+            font_size: 20
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_2
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_3
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_4
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_5
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_6
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_7
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_8
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_9
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_10
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_11
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+        Label:
+            id: Label_collect_12
+            border: (2, 2, 2, 2)
+            font_size: 20
+            text: ''
+            color:  0, 0, 0, 1
+
+        BoxLayout:
+            #orientation: 'vertical'
+            MenuButton:
+                text:'Back'
+                on_press: app.back()
